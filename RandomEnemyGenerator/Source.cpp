@@ -15,7 +15,7 @@ struct Enemy
 };
 bool IsTypeEqual(const Enemy &a, const Enemy &b)
 {
-	return (a.type == b.type && a.name == b.name);
+	return ( a.name == b.name);
 }
 Enemy CreateRandomEnemy ()
 {
@@ -100,6 +100,6 @@ void main()
 	for (int x = 0; x < enemynumber; x++)
 	{
 		tipo = returntype(arr[x].type);
-		std::cout << arr[x].name << " is a " << tipo << " whose life is " << arr[i].health << std::endl;
+		std::cout << arr[x].name << " is a " << tipo << " whose life is " << arr[x].health << std::endl;
 	}
 }

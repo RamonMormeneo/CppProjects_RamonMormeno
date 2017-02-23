@@ -13,12 +13,15 @@ struct Enemy
 	std::string name;
 	int health;
 };
-
+bool IsTypeEqual(const Enemy &a, const Enemy &b)
+{
+	return (a.type == b.type && a.name == b.name);
+}
 Enemy CreateRandomEnemy ()
 {
 	Enemy enemigo;
-	int aux = rand() % 5;
-	int aux2 = rand() % 6;
+	int aux = rand() % 4;
+	int aux2 = rand() % 5;
 	switch (aux)
 	{
 	case 1:
@@ -61,15 +64,42 @@ Enemy CreateRandomEnemy ()
 	return enemigo;
 
 }
-
+std::string returntype(EnemyType a)
+{
+	switch (a)
+	{
+	case EnemyType::ghost:
+		return "Ghost";
+	case EnemyType::vampire:
+		return "Vampire";
+	case EnemyType::zombie:
+		return "Zombie";
+	case EnemyType::witch:
+		return "Witch";
+	}
+}
 void main()
 {
-	 const int enemynumber = 5;
+	srand(time(nullptr));
+	const int enemynumber = 5;
 	static Enemy arr[enemynumber];
+	std::string tipo;
 	for (int i = 0; i < enemynumber; i++)
 	{
+		arr[i] = CreateRandomEnemy();
+		
+		for (int j = 0; j <i; j++)
+		{
+			if (IsTypeEqual(arr[i],arr[j])==true)
+			{
+				i--;
+			}
 
+		}
 	}
-	EnemyType t = zombie;
-	std::cout << t;
+	for (int x = 0; x < enemynumber; x++)
+	{
+		tipo = returntype(arr[x].type);
+		std::cout << arr[x].name << " is a " << tipo << " whose life is " << arr[i].health << std::endl;
+	}
 }

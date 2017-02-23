@@ -6,7 +6,7 @@ enum  WEAPONS
 {
 	FISTS,GUN,SHOUTGUN,REVOLVER,SNIPER,MACHINE_GUN,MAX
 };
-
+class Zombie;
 class Player
 {
 public:

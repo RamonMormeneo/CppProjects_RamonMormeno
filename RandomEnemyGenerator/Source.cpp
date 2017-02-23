@@ -24,16 +24,16 @@ Enemy CreateRandomEnemy ()
 	int aux2 = rand() % 5;
 	switch (aux)
 	{
-	case 1:
+	case 0:
 		enemigo.type = zombie;
 		break;
-	case 2:
+	case 1:
 		enemigo.type = vampire;
 		break;
-	case 3:
+	case 2:
 		enemigo.type = ghost;
 		break;
-	case 4:
+	case 3:
 		enemigo.type = witch;
 		break;
 	default:
@@ -41,19 +41,19 @@ Enemy CreateRandomEnemy ()
 	}
 	switch (aux2)
 	{
-	case 1:
+	case 0:
 		enemigo.name = "Roberto";
 		break;
-	case 2:
+	case 1:
 		enemigo.name = "Anna";
 		break;
-	case 3:
+	case 2:
 		enemigo.name = "El Jhonny";
 		break;
-	case 4:
+	case 3:
 		enemigo.name = "Luna";
 		break;
-	case 5:
+	case 4:
 		enemigo.name = "Mariona";
 		break;
 	default:

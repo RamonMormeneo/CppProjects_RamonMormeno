@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 
-enum EnemyType
+enum class EnemyType
 {
 	zombie,vampire,ghost,witch,max
 };
@@ -13,32 +13,15 @@ struct Enemy
 	std::string name;
 	int health;
 };
-bool IsTypeEqual(const Enemy &a, const Enemy &b)
+bool operator== ( Enemy &a, Enemy &b)
 {
-	return ( a.name == b.name);
+	return ( a.name == b.name && a.type == b.type);
 }
 Enemy CreateRandomEnemy ()
 {
 	Enemy enemigo;
-	int aux = rand() % 4;
 	int aux2 = rand() % 5;
-	switch (aux)
-	{
-	case 0:
-		enemigo.type = zombie;
-		break;
-	case 1:
-		enemigo.type = vampire;
-		break;
-	case 2:
-		enemigo.type = ghost;
-		break;
-	case 3:
-		enemigo.type = witch;
-		break;
-	default:
-		break;
-	}
+	enemigo.type = static_cast<EnemyType>(rand()%static_cast<int>(EnemyType::max));
 	switch (aux2)
 	{
 	case 0:
@@ -90,7 +73,7 @@ void main()
 		
 		for (int j = 0; j <i; j++)
 		{
-			if (IsTypeEqual(arr[i],arr[j])==true)
+			if (operator==(arr[i],arr[j])==true)
 			{
 				i--;
 			}

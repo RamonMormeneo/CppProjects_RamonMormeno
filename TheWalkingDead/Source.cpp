@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 
-enum  WEAPONS
+enum class WEAPONS
 {
 	FISTS, GUN, SHOUTGUN, REVOLVER, SNIPER, MACHINE_GUN, MAX
 };
@@ -17,13 +17,7 @@ public:
 	void attack(Zombie &z);
 	bool isAlive()
 	{
-		if (life <= 0)
-		{
-			return false;
-		}
-		else
-			return true;
-
+		return life>0;
 	};
 private:
 
@@ -49,13 +43,12 @@ private:
 
 Player::Player()
 {
-	weapon = (static_cast <WEAPONS>(rand() % 7)), precision = (rand() % (11) / 10.0f), life = rand() % 101;
-
+	weapon = (static_cast <WEAPONS>(rand() % static_cast<int>(WEAPONS :: MAX))), precision = (rand() % (10) / 10.0f), life = rand() % 101;
 }
 
 void Player::attack(Zombie &z)
 {
-	z.life = z.life - (weapon*precision);
+	z.life = z.life - (static_cast<int>(weapon)*precision);
 }
 
 
@@ -63,7 +56,7 @@ void Player::attack(Zombie &z)
 
 Zombie::Zombie()
 {
-	distanceToPlayer = rand() % (181) + 20, speed = (rand() % 41) / 2.0f, damage = (rand() % 41) / 2.0f, life = rand() % 101;
+	distanceToPlayer = rand() % (180) + 20, speed = (rand() % 200) / 10.0f, damage = (rand() % 200) / 10.0f, life = rand() % 101;
 }
 
 void Zombie::attackPlayer(Player &z)
@@ -79,16 +72,18 @@ void Zombie::attackPlayer(Player &z)
 
 void main()
 {
+	const int nummzombies = 10;
 	srand(time(nullptr));
 	Player player;
-	static Zombie zombies[10];
+	static Zombie zombies[nummzombies];
 	bool ZombiesareAlive = true;
-
+	
 	do
 	{
-		std::cout << player.weapon << " " << player.life << " " << player.precision << std::endl;
+		
+		std::cout << player.life << " " << player.precision << std::endl;
 		ZombiesareAlive = false;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < nummzombies; i++)
 		{
 			if (zombies[i].life > 0)
 			{

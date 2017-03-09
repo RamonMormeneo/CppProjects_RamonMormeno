@@ -8,7 +8,7 @@ void main()
 
 	int x = arr[3];
 	int y = arr2[3];
-	bool soniguales = arr == arr2;
+	arr2.push(20);
 
-	std::cout << soniguales << " " << x << " " << arr2[4];
+	std::cout << " " << x << " " << arr2[5];
 }

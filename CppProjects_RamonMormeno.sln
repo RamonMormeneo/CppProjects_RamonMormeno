@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RandomEnemyGenerator", "Ran
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynArray", "DynArray\DynArray.vcxproj", "{88218FBB-11B8-4EC8-BE4D-20CFE6D1B45A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Teasting", "Teasting\Teasting.vcxproj", "{C471D3CF-A2ED-4E46-92AE-BE15873AE602}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{88218FBB-11B8-4EC8-BE4D-20CFE6D1B45A}.Release|x64.Build.0 = Release|x64
 		{88218FBB-11B8-4EC8-BE4D-20CFE6D1B45A}.Release|x86.ActiveCfg = Release|Win32
 		{88218FBB-11B8-4EC8-BE4D-20CFE6D1B45A}.Release|x86.Build.0 = Release|Win32
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Debug|x64.ActiveCfg = Debug|x64
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Debug|x64.Build.0 = Debug|x64
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Debug|x86.ActiveCfg = Debug|Win32
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Debug|x86.Build.0 = Debug|Win32
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Release|x64.ActiveCfg = Release|x64
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Release|x64.Build.0 = Release|x64
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Release|x86.ActiveCfg = Release|Win32
+		{C471D3CF-A2ED-4E46-92AE-BE15873AE602}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

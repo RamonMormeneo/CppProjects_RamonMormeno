@@ -88,10 +88,9 @@ bool operator==(const DynArray & lhs, const DynArray & rhs)
 
 void DynArray::push(const int & val)
 {
-	int *last = m_data + m_size;
-	if ( *(m_data+m_size)== 0)
+	if ( end()== 0)
 	{
-		*last = val;
+		*end() = val;
 	}
 	else
 	{

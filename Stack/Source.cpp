@@ -1,8 +1,7 @@
 #include <stack>
 #include <iostream>
 #include <queue>
-
-
+#include "MyStack.h"
 std::stack<int> SuperMerge(const std::stack<int> a, const std::stack<int> b)
 {
 	std::stack<int> resultad;
@@ -165,6 +164,8 @@ std::stack <int> change(std::stack <int> &a)
 void main()
 {
 	std::stack <int> a;
+	/*
+	std::stack <int> a;
 	std::stack <int> b;
 	a.push(5);
 	a.push(7);
@@ -217,5 +218,10 @@ void main()
 	{
 		std::cout << aux4.top() << " ";;
 		aux4.pop();
-	}
+	}*/
+
+	MyStack algo;
+	algo.push(2);
+	algo.push(3);
+	algo.pop();
 }

@@ -13,9 +13,9 @@ MyStack::~MyStack()
 
 void MyStack::pop()
 {
-	node *aux;
-	aux = s++;
-	delete s;
+	node *t = s;
+	s = s->next;
+	delete t;
 }
 
 void MyStack::push(int a)
@@ -27,7 +27,7 @@ void MyStack::push(int a)
 
 int MyStack::top()
 {
-	return 0;
+	return s->info;
 }
 
 int MyStack::size()
@@ -37,5 +37,5 @@ int MyStack::size()
 
 bool MyStack::isEmpty()
 {
-	return false;
+	return;
 }

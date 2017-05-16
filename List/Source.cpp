@@ -2,6 +2,8 @@
 #include <iostream>
 #include <algorithm>
 #include <set>
+#include"MyList.h"
+/*
 std::list <int> superMerge(std::list <int> &a, std::list <int> &b)
 {
 	std::list <int> result(a);
@@ -79,6 +81,7 @@ bool palindro(std::list <int> &a)
 	int aux = 0;
 	while (aux < a.size())
 	{
+		int aux2 = *it2;
 		if (*it != *it2)
 		{
 			result = false;
@@ -87,7 +90,7 @@ bool palindro(std::list <int> &a)
 		it2++;
 		aux++;
 	}
-	if (result = true)
+	if (result == true)
 	{
 		std:: cout << "HOLA";
 	}
@@ -125,7 +128,20 @@ void main()
 	for (std::list<int>::iterator it4 = l6.begin(); it4 != l6.end(); it4++)
 		std::cout << ' ' << *it4;
 
-	std::list<int> l7({ 8,9,9,8 });
-	palindro(l6);
+	std::list<int> l7({ 8,9,8,8 });
+	std::cout << std::endl;
+	palindro(l7);
 
+}*/
+
+void main()
+{
+	MyList a;
+	
+	a.push_front(2);
+
+	a.push_front(3);
+
+	a.push_front(4);
+	MyList b(a);
 }

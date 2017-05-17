@@ -37,7 +37,6 @@ void forwardList::push_front(int a)
 void forwardList::pop_front()
 {
 	node *t = first;
-	delete first;
 	first = t->next;
 	delete t;
 }

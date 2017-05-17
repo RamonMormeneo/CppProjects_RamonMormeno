@@ -1,7 +1,9 @@
 #include <deque>
 #include <vector>
 #include <iostream>
+#include <queue>
 
+/*
 void main()
 {
 	std::deque <float> prices(10, 10.5);
@@ -39,4 +41,40 @@ void main()
 		std::cout << *i << "-";
 	}
 
+}*/
+
+std::priority_queue <int> SuperMergeP(std::priority_queue <int> &a, std::priority_queue <int> &b)
+{
+	std::priority_queue <int> result;
+	std::priority_queue <int> aux1=a;
+	std::priority_queue <int> aux2=b;
+	while (!aux1.empty())
+	{
+		result.push(aux1.top());
+		aux1.pop();
+	}
+	while (!aux2.empty())
+	{
+		result.push(aux2.top());
+		aux2.pop();
+	}
+	return result;
+}
+
+std::queue <int> concatQueue(std::queue <int> &a, std::queue <int> &b)
+{
+	std::queue <int> result;
+	std::queue <int> aux1 = a;
+	std::queue <int> aux2 = b;
+	while (!aux1.empty())
+	{
+		result.push(aux1.front());
+		aux1.pop();
+	}
+	while (!aux2.empty())
+	{
+		result.push(aux2.front());
+		aux2.pop();
+	}
+	return result;
 }
